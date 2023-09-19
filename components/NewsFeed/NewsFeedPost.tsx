@@ -205,7 +205,7 @@ const NewsFeedPost: NextPage<NewsFeedPostType> = ({
             </PostSupportButton>
             <PostLikesBlock>
               <PostAuthorName>{likesCount}</PostAuthorName>
-              <PostKudosCount>${kudosCount} Kudos</PostKudosCount>
+              <PostKudosCount>{kudosCount} Kudos</PostKudosCount>
             </PostLikesBlock>
           </PostAuthorBlock>
           <PostCommentsBlock>
