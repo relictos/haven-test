@@ -68,7 +68,11 @@ const PageColumns = styled.div`
 `;
 const PageContent = styled.div`
   align-self: stretch;
+  min-height: 100vh;
   background-color: var(--bg-body-bg);
+`;
+const PageContentContainer = styled.div`
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   padding: var(--padding-xl) 40px;
@@ -81,7 +85,7 @@ const PageContent = styled.div`
     box-sizing: border-box;
   }
 `;
-const NewsFeedLocofyTestRoot = styled.div`
+const NewsFeedRoot = styled.div`
   position: relative;
   background-color: var(--bg-body-outer-bg);
   width: 100%;
@@ -110,27 +114,37 @@ const NewsFeedLocofyTestRoot = styled.div`
 
 const NewsFeedLocofyTest: NextPage = () => {
   return (
-    <NewsFeedLocofyTestRoot>
+    <NewsFeedRoot>
       <PageContent>
-        <MainMenu />
-        <PageColumns>
-          <PageLeftColumn>
-            <NewPostBlock newPostText="Create a new publication" />
-            <NewsFeedPosts>
-              <NewsFeedPost author="Jack Nickelson" date="2 hours ago" />
-              <NewsFeedPost author="Jack Nickelson" date="2 hours ago" />
-              <NewsFeedPost author="Jack Nickelson" date="2 hours ago" />
-            </NewsFeedPosts>
-          </PageLeftColumn>
-          <PageRightColumn>
-            <PageRightColumnContent>
-              <NewsFeedPopularHavens />
-              <NewsFeedBanner />
-            </PageRightColumnContent>
-          </PageRightColumn>
-        </PageColumns>
+        <PageContentContainer>
+          <MainMenu />
+          <PageColumns>
+            <PageLeftColumn>
+              <NewPostBlock newPostText="Create a new publication" />
+              <NewsFeedPosts>
+                <NewsFeedPost 
+                  author="Jack Nickelson" 
+                  date="2 hours ago" 
+                  avatar="/postauthoravatar@2x.png"
+                  likesCount={145}
+                  kudosCount={23.5}
+                  commentsCount={12}
+                  content="Bitcoin and Ethereum continue to dominate, while Binance Coin, Solana, and Cardano offer unique features and opportunities..."
+                />
+                <NewsFeedPost author="Jack Nickelson" date="2 hours ago" />
+                <NewsFeedPost author="Jack Nickelson" date="2 hours ago" />
+              </NewsFeedPosts>
+            </PageLeftColumn>
+            <PageRightColumn>
+              <PageRightColumnContent>
+                <NewsFeedPopularHavens />
+                <NewsFeedBanner />
+              </PageRightColumnContent>
+            </PageRightColumn>
+          </PageColumns>
+        </PageContentContainer>
       </PageContent>
-    </NewsFeedLocofyTestRoot>
+    </NewsFeedRoot>
   );
 };
 

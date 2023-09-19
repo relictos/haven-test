@@ -22,36 +22,7 @@ const MenuList = styled.div`
     display: none;
   }
 `;
-const IconsmenuChild = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-`;
-const IconsmenuItem = styled.div`
-  position: absolute;
-  height: 8.33%;
-  width: 66.67%;
-  top: 33.33%;
-  right: 16.67%;
-  bottom: 58.33%;
-  left: 16.67%;
-  background-color: var(--text-text-lvl-1);
-`;
-const IconsmenuInner = styled.div`
-  position: absolute;
-  height: 8.33%;
-  width: 41.67%;
-  top: 58.33%;
-  right: 16.67%;
-  bottom: 33.33%;
-  left: 41.67%;
-  background-color: var(--text-text-lvl-1);
-`;
-const Iconsmenu = styled.div`
+const Iconsmenu = styled.img`
   position: relative;
   width: 24px;
   height: 24px;
@@ -119,17 +90,13 @@ const MainMenu: NextPage = () => {
       <MenuContainer>
         <HavenLogoIcon alt="" src="/group-2-100.svg" />
         <MenuList>
-          <MenuItem active="--text-text-lvl-1" />
-          <MenuItem active="#a1a1a6" />
-          <MenuItem active="#a1a1a6" />
-          <MenuItem active="#a1a1a6" />
+          <MenuItem title="News Feed" />
+          <MenuItem title="Havens" />
+          <MenuItem title="Friends" />
+          <MenuItem title="Settings" />
         </MenuList>
         <MenuMobileButton>
-          <Iconsmenu>
-            <IconsmenuChild />
-            <IconsmenuItem />
-            <IconsmenuInner />
-          </Iconsmenu>
+          <Iconsmenu alt="" src="/menu.svg" />
         </MenuMobileButton>
         <MenuUserAvatarPicIcon alt="" src="/menuuseravatarpic@2x.png" />
       </MenuContainer>

@@ -70,22 +70,18 @@ const NewsFeedPopularHavens: NextPage = memo(() => {
         <HavensSmallListRec
           title="Onomy Protocol"
           subtitle="291 followers"
-          showHavensSmallRecUnderline
         />
         <HavensSmallListRec
           title="Onomy Protocol"
           subtitle="291 followers"
-          showHavensSmallRecUnderline
         />
         <HavensSmallListRec
           title="Onomy Protocol"
           subtitle="291 followers"
-          showHavensSmallRecUnderline
         />
         <HavensSmallListRec
           title="Onomy Protocol"
           subtitle="291 followers"
-          showHavensSmallRecUnderline
         />
         <HavensSmallListRec
           title="Onomy Protocol"

@@ -61,7 +61,7 @@ const HavensSmallListRecRoot = styled.div`
 const HavensSmallListRec: NextPage<HavensSmallListRecType> = ({
   title = "Onomy Protocol",
   subtitle = "291 followers",
-  showHavensSmallRecUnderline,
+  showHavensSmallRecUnderline = true,
 }) => {
   return (
     <HavensSmallListRecRoot>

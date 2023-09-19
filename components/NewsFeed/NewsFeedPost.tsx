@@ -4,6 +4,11 @@ import styled from "styled-components";
 type NewsFeedPostType = {
   author?: string;
   date?: string;
+  content?: string;
+  avatar?: string;
+  likesCount?: number;
+  kudosCount?: number;
+  commentsCount?: number;
 };
 
 const PostAuthorAvatarIcon = styled.img`
@@ -14,6 +19,11 @@ const PostAuthorAvatarIcon = styled.img`
   object-fit: cover;
 `;
 const PostAuthorName = styled.div`
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 600;
+`;
+const PostCommentsCount = styled.div`
   position: relative;
   text-transform: capitalize;
   font-weight: 600;
@@ -165,13 +175,18 @@ const NewsFeedPostRoot = styled.div`
 const NewsFeedPost: NextPage<NewsFeedPostType> = ({
   author = "Jack Nickelson",
   date = "2 hours ago",
+  avatar = "/postauthoravatar@2x.png",
+  content = "Bitcoin and Ethereum continue to dominate, while Binance Coin, Solana, and Cardano offer unique features and opportunities...",
+  likesCount = 145,
+  kudosCount = 24.5,
+  commentsCount = 13
 }) => {
   return (
     <NewsFeedPostRoot>
       <PostContent>
         <PostTopBar>
           <PostAuthorBlock>
-            <PostAuthorAvatarIcon alt="" src="/postauthoravatar@2x.png" />
+            <PostAuthorAvatarIcon alt="" src={avatar} />
             <PostAuthorNameDataContaine>
               <PostAuthorName>{author}</PostAuthorName>
               <PostAuthorPublishedDate>{date}</PostAuthorPublishedDate>
@@ -181,10 +196,7 @@ const NewsFeedPost: NextPage<NewsFeedPostType> = ({
             <Iconsshare alt="" src="/iconsshare.svg" />
           </PostShareButton>
         </PostTopBar>
-        <PostText>
-          Bitcoin and Ethereum continue to dominate, while Binance Coin, Solana,
-          and Cardano offer unique features and opportunities...
-        </PostText>
+        <PostText>{content}</PostText>
         <PostBottomBar>
           <PostAuthorBlock>
             <PostSupportButton>
@@ -192,12 +204,12 @@ const NewsFeedPost: NextPage<NewsFeedPostType> = ({
               <PostSupportText>Support</PostSupportText>
             </PostSupportButton>
             <PostLikesBlock>
-              <PostAuthorName>145</PostAuthorName>
-              <PostKudosCount>24.5 Kudos</PostKudosCount>
+              <PostAuthorName>{likesCount}</PostAuthorName>
+              <PostKudosCount>${kudosCount} Kudos</PostKudosCount>
             </PostLikesBlock>
           </PostAuthorBlock>
           <PostCommentsBlock>
-            <PostAuthorName>12</PostAuthorName>
+            <PostCommentsCount>{commentsCount}</PostCommentsCount>
             <PostCommentsIcon>
               <Iconscomment alt="" src="/iconscomment.svg" />
             </PostCommentsIcon>

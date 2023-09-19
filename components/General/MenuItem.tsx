@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 type MenuItemType = {
   /** Style props */
-  active?: CSSProperties["color"];
+  title?: string;
 };
 
-const MenuItemRoot = styled.div<{ active?: Property.Color }>`
+const MenuItemRoot = styled.div`
   position: relative;
   font-size: var(--text-14-size);
   text-transform: capitalize;
@@ -16,11 +16,13 @@ const MenuItemRoot = styled.div<{ active?: Property.Color }>`
   font-family: var(--title-12);
   color: var(--text-text-lvl-3);
   text-align: left;
-  color: ${(p) => p.active};
+  color: --text-text-lvl-2;
 `;
 
-const MenuItem: NextPage<MenuItemType> = memo(({ active }) => {
-  return <MenuItemRoot active={active}>News Feed</MenuItemRoot>;
-});
+const MenuItem: NextPage<MenuItemType> = ({
+  title = "News Feed" 
+}) => {
+  return <MenuItemRoot>{title}</MenuItemRoot>;
+};
 
 export default MenuItem;
